@@ -17,8 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="WEB"></Header>
-      <Nav topics={topics}></Nav>
+      <Header title="WEB" onChangeMode={() => {
+        alert('Header');
+      }}></Header>
+      <Nav topics={topics} onChangeMode={(id) => {
+        alert(id);
+      }}></Nav>
       <Article title="Welcome" body="Hello, WEB"></Article>
     </div>
   )

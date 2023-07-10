@@ -4,7 +4,12 @@ function Nav(props) {
     let t = props.topics[i];
     lis.push(
       <li key={ t.id }>
-        <a href={'/read/' + t.id}>{ t.title }</a>
+        <a href={'/read/' + t.id} id={ t.id } onClick={(e) => {
+          e.preventDefault();
+          props.onChangeMode(e.target.id);
+        }}>
+          { t.title }
+        </a>
       </li>
     );
   }

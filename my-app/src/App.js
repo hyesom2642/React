@@ -8,10 +8,17 @@ import Article from './components/Article';
 // import Content from './components/Content';
 
 function App() {
+  const topics = [
+    {id: 1, title: 'HTML', body: 'HTML is ...'},
+    {id: 2, title: 'CSS', body: 'CSS is ...'},
+    {id: 3, title: 'Javascript', body: 'Javascript is ...'},
+    {id: 4, title: 'React', body: 'React is ...'},
+  ]
+
   return (
     <div className="App">
       <Header title="WEB"></Header>
-      <Nav></Nav>
+      <Nav topics={topics}></Nav>
       <Article title="Welcome" body="Hello, WEB"></Article>
     </div>
   )

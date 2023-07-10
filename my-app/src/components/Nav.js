@@ -1,8 +1,19 @@
-function Nav() {
+function Nav(props) {
+  const lis = [];
+  for(let i = 0; i < props.topics.length; i++) {
+    let t = props.topics[i];
+    lis.push(
+      <li key={ t.id }>
+        <a href={'/read/' + t.id}>{ t.title }</a>
+      </li>
+    );
+  }
+
   return (
     <nav>
       <ol>
-        <li>
+        { lis }
+        {/* <li>
           <a href="/read/1">HTML</a>
         </li>
         <li>
@@ -13,7 +24,7 @@ function Nav() {
         </li>
         <li>
           <a href="/read/4">React</a>
-        </li>
+        </li> */}
       </ol>
     </nav>
   )
